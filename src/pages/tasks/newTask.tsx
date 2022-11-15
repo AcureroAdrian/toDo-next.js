@@ -52,7 +52,7 @@ const NewTask = () => {
 
   const updateTask = async () => {
     try {
-      await fetch(`http://Localhost:3000/api/tasks/${query.id}`, {
+      await fetch(`mongodb+srv://AdrianAcurero:monoloko@atlascluster.k8joijz.mongodb.net/?retryWrites=true&w=majority/api/tasks/${query.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

@@ -57,7 +57,7 @@ const HomePage: NextPage<Props> = ({tasks}) => {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
-  const tasks = await fetch('http://localhost:3000/api/tasks').then(res => res.json())
+  const tasks = await fetch('mongodb+srv://AdrianAcurero:monoloko@atlascluster.k8joijz.mongodb.net/?retryWrites=true&w=majority/api/tasks').then(res => res.json())
   
 
   return {

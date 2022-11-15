@@ -21,7 +21,7 @@ const TaskDetail: NextPage<Props> = ({ task, error }) => {
 
   const deleteTask = async () => {
     try {
-      await fetch(`http://localhost:3000/api/tasks/${query.id}`, {
+      await fetch(`mongodb+srv://AdrianAcurero:monoloko@atlascluster.k8joijz.mongodb.net/?retryWrites=true&w=majority/api/tasks/${query.id}`, {
         method: 'DELETE'
       })
     } catch (error) {
@@ -67,7 +67,7 @@ const TaskDetail: NextPage<Props> = ({ task, error }) => {
 export const getServerSideProps: GetServerSideProps = async ({
   query: { id },
 }) => {
-  const res = await fetch(`http://localhost:3000/api/tasks/${id}`);
+  const res = await fetch(`mongodb+srv://AdrianAcurero:monoloko@atlascluster.k8joijz.mongodb.net/?retryWrites=true&w=majority/api/tasks/${id}`);
 
   if (res.status === 200) {
     const task = await res.json();
