@@ -57,7 +57,7 @@ const HomePage: NextPage<Props> = ({tasks}) => {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
-  const tasks = await fetch('mongodb+srv://AdrianAcurero:monoloko@atlascluster.k8joijz.mongodb.net/?retryWrites=true&w=majority/api/tasks').then(res => res.json())
+  const tasks = await fetch('https://to-do-next-js-lovat.vercel.app/api/tasks').then(res => res.json())
   
 
   return {

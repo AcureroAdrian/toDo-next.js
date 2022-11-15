@@ -38,7 +38,7 @@ const NewTask = () => {
 
   const createTask = async () => {
       try {
-        await fetch('http://Localhost:3000/api/tasks', {
+        await fetch('https://to-do-next-js-lovat.vercel.app/api/tasks', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ const NewTask = () => {
 
   const updateTask = async () => {
     try {
-      await fetch(`mongodb+srv://AdrianAcurero:monoloko@atlascluster.k8joijz.mongodb.net/?retryWrites=true&w=majority/api/tasks/${query.id}`, {
+      await fetch(`https://to-do-next-js-lovat.vercel.app/api/tasks/${query.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ const NewTask = () => {
   ) => setnewTask({...newTask, [e.target.id]: e.target.value} as Task);
 
   const getTask = async () => {
-    const data = await fetch(`http://localhost:3000/api/tasks/${query.id}`).then(res => res.json())
+    const data = await fetch(`https://to-do-next-js-lovat.vercel.app/api/tasks/${query.id}`).then(res => res.json())
     setnewTask({title: data.title, description: data.description})
   }
 
