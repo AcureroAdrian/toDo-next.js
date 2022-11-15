@@ -8,7 +8,7 @@ interface Task {
     description?: string
 }
 
-const newTask = () => {
+const NewTask = () => {
   const [newTask, setnewTask] = useState<Task>();
   const [errors, setErrors] = useState<Task>()
 
@@ -27,7 +27,6 @@ const newTask = () => {
     e.preventDefault();
 
     const errors = validate()
-    console.log(Object.keys(errors))
     if(Object.keys(errors).length) return setErrors(errors)
 
 
@@ -75,7 +74,6 @@ const newTask = () => {
   }
 
     useEffect(() => {
-      console.log(query)
       if (query.id) getTask() 
     }, [])
     
@@ -117,4 +115,4 @@ const newTask = () => {
   );
 };
 
-export default newTask;
+export default NewTask;

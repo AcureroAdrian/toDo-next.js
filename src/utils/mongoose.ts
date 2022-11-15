@@ -1,8 +1,6 @@
 import { connect, connection } from "mongoose";
 const { MONGODB_URL } = process.env;
 
-console.log(MONGODB_URL)
-
 const conn = {
   isConnected: 0
 }

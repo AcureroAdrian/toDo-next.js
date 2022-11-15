@@ -28,7 +28,6 @@ export default async (
       try {
         const newTask = new Task(body)
         const savedTask = await newTask.save()
-        console.log(savedTask)
         return res.status(201).json(savedTask)
       } catch (error: any) {
         console.log(error)
