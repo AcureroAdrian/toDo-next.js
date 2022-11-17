@@ -21,7 +21,7 @@ const TaskDetail: NextPage<Props> = ({ task, error }) => {
 
   const deleteTask = async () => {
     try {
-      await fetch(`https://to-do-next-js-lovat.vercel.app/api/tasks/${query.id}`, {
+      await fetch(`https://to-do-next-js-theta.vercel.app/api/tasks/${query.id}`, {
         method: 'DELETE'
       })
     } catch (error) {
@@ -67,7 +67,7 @@ const TaskDetail: NextPage<Props> = ({ task, error }) => {
 export const getServerSideProps: GetServerSideProps = async ({
   query: { id },
 }) => {
-  const res = await fetch(`https://to-do-next-js-lovat.vercel.app/api/tasks/${id}`);
+  const res = await fetch(`https://to-do-next-js-theta.vercel.app/api/tasks/${id}`);
 
   if (res.status === 200) {
     const task = await res.json();
